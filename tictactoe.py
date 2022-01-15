@@ -27,6 +27,7 @@ def main():
         player = next_player(player)
     show_board(board)
     print("Thanks for play")
+input()
 
 
 
