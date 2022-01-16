@@ -2,23 +2,9 @@
 tic tac toe game
 author: Luis A. Rojas
 '''
-print("Hi, Now we will playing tic tac toe")
-input()
-know = input("Do yu know how to play? (YES / NO): ")
-if know.lower() =="yes":
-    print("Excellent, let's start")
-elif know.lower() =="no":
-    print ("Instructions:")
-    print("     You must choose a position number between 1 to 9") 
-    print("     on the board to replace it with an 'O' or an 'X'")
-    print("     depending on the symbol you use.")
-input()
-print("Are you ready?")
-input()
-print("Let's start")
-input()
 
-def main():    
+def main():   
+    wellcome() 
     player = next_player("")
     board = make_board()
     while not (winner(board) or draw(board)):
@@ -27,7 +13,24 @@ def main():
         player = next_player(player)
     show_board(board)
     print("Thanks for play")
-input()
+
+
+def wellcome():
+    print("Hi, Now we will playing tic tac toe")
+    input()
+    know = input("Do yu know how to play? (YES / NO): ")
+    if know.lower() =="yes":
+        print("Excellent, let's start")
+    elif know.lower() =="no":
+        print ("Instructions:")
+        print("     You must choose a position number between 1 to 9") 
+        print("     on the board to replace it with an 'O' or an 'X'")
+        print("     depending on the symbol you use.")
+    input()
+    print("Are you ready?")
+    input()
+    print("Let's start")
+    input()
 
 
 
@@ -39,11 +42,11 @@ def make_board():
     
 def show_board(board):
     print()
-    print(f"{board[0]}|{board[1]}|{board[2]}")
-    print('-|-|-')
-    print(f"{board[3]}|{board[4]}|{board[5]}")
-    print('-|-|-')
-    print(f"{board[6]}|{board[7]}|{board[8]}")
+    print(f"{board[0]} | {board[1]} | {board[2]}")
+    print('--|---|--')
+    print(f"{board[3]} | {board[4]} | {board[5]}")
+    print('--|---|--')
+    print(f"{board[6]} | {board[7]} | {board[8]}")
     print()
 
 def select_position(player, board):
